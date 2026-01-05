@@ -2,8 +2,9 @@ import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 // Layouts
-const MainLayout = lazy(() => import('@/components/Layout/MainLayout'));
-const AuthLayout = lazy(() => import('@/components/Layout/AuthLayout'));
+const MainLayout = lazy(() => import('@/Layout/MainLayout'));
+const AuthLayout = lazy(() => import('@/Layout/AuthLayout'));
+const AdminLayout = lazy(() => import('@/Layout/AdminLayout'))
 
 const Home = lazy(() => import('@/pages/Home'));
 const NewListing = lazy(() => import('@/pages/NewListing'));
@@ -24,6 +25,10 @@ const Privacy = lazy(() => import('@/pages/static/Privacy'));
 const Services = lazy(() => import('@/pages/static/Services'));
 const FAQ = lazy(() => import('@/pages/static/Faq'));
 const HelpCenter = lazy(() => import('@/pages/static/Help'));
+
+const Dashboard = lazy(() => import('@/pages/admin/Dashboard'));
+const CategoryList = lazy(() => import('@/pages/admin/CategoryList'));
+const ProductList = lazy(() => import('@/pages/admin/ProductList'));
 
 const AppRouter = () => {
     return (
@@ -55,6 +60,13 @@ const AppRouter = () => {
                 <Route element={<AuthLayout />}>
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/login" element={<Login />} />
+                </Route>
+
+                {/* 后台路由 */}
+                <Route path="/admin" element={<AdminLayout />}>
+                    <Route index element={<Dashboard />} />
+                    <Route path="categories" element={<CategoryList />} />
+                    <Route path="products" element={<ProductList />} />
                 </Route>
 
 

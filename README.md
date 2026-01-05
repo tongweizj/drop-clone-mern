@@ -1,9 +1,9 @@
-# SupplyDrop - MERN Stack Group Buy Platform
+# DropClone - MERN Stack Group Buy Platform
 
 [![GitHub License](https://img.shields.io/github/license/tongweizj/drop-clone-mern)](https://github.com/tongweizj/drop-clone-mern/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tongweizj/drop-clone-mern/pulls)
 
-**SupplyDrop** 是一个基于 MERN 栈开发的电商平台，旨在克隆并致敬 [Drop.com](https://drop.com) (原 Massdrop)。它通过“社区驱动”和“阶梯团购”机制，联结全球爱好者与高品质装备。
+**DropClone** 是一个基于 MERN 栈开发的电商平台，旨在克隆并致敬 [Drop.com](https://drop.com) (原 Massdrop)。它通过“社区驱动”和“阶梯团购”机制，联结全球爱好者与高品质装备。
 
 ---
 
