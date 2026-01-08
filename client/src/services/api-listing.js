@@ -1,6 +1,5 @@
 import { API_BASE_URL } from '/src/config';
 
-console.log(`API_BASE_URL:${API_BASE_URL}`)
 // CREATE
 export const create = async (formData) => {
     const res = await fetch(`${API_BASE_URL}/api/listings/`, {
@@ -49,6 +48,7 @@ export const create = async (formData) => {
   };
   
   export const update = async (params, credentials, dataToSend) => {
+    console.log("service update:")
     const options = {
       method: 'PUT',
       headers: {

@@ -28,7 +28,8 @@ const HelpCenter = lazy(() => import('@/pages/static/Help'));
 
 const Dashboard = lazy(() => import('@/pages/admin/Dashboard'));
 const CategoryList = lazy(() => import('@/pages/admin/CategoryList'));
-const ProductList = lazy(() => import('@/pages/admin/ProductList'));
+const ProductListPage = lazy(() => import('@/pages/admin/ProductListPage'));
+const ProductEditPage = lazy(() => import('@/pages/admin/ProductEditPage'));
 
 const AppRouter = () => {
     return (
@@ -38,7 +39,6 @@ const AppRouter = () => {
                     <Route path="/" element={<Home />} />
 
                     <Route path="/user/profile" element={<Profile />} />
-
                     <Route path="/user/favorites" element={<Favorites />} />
                     <Route path="/user/cart" element={<Cart />} />
                     <Route path="/user/myListings" element={<MyListings />} />
@@ -66,7 +66,9 @@ const AppRouter = () => {
                 <Route path="/admin" element={<AdminLayout />}>
                     <Route index element={<Dashboard />} />
                     <Route path="categories" element={<CategoryList />} />
-                    <Route path="products" element={<ProductList />} />
+                    <Route path="products" element={<ProductListPage />} />
+                    <Route path="product/:productId" element={<ProductEditPage />} />
+                    
                 </Route>
 
 
