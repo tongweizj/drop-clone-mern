@@ -25,10 +25,10 @@ const ProductCard = ({ item }) => {
                 <Link to={`/product/${item._id}`} target="_blank">
                     浏览
                 </Link>
-                <Link to={`/admin/product/${item._id}`} target="_blank">
+                <Link to={`/admin/products/${item._id}`} >
                     编辑
                 </Link>
-                <Link to={`/product/${item._id}`} target="_blank">
+                <Link to={`/products/${item._id}`} target="_blank">
                     删除
                 </Link>
             </div>

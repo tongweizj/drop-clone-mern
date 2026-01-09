@@ -7,9 +7,6 @@ const AuthLayout = lazy(() => import('@/Layout/AuthLayout'));
 const AdminLayout = lazy(() => import('@/Layout/AdminLayout'))
 
 const Home = lazy(() => import('@/pages/Home'));
-const NewListing = lazy(() => import('@/pages/NewListing'));
-const MyListings = lazy(() => import('@/pages/MyListings'));
-const EditListing = lazy(() => import('@/pages/EditListing'));
 const Signup = lazy(() => import('@/pages/auth/Signup'));
 const Login = lazy(() => import('@/pages/auth/Signin'));
 const Profile = lazy(() => import('@/pages/Profile'));
@@ -41,11 +38,9 @@ const AppRouter = () => {
                     <Route path="/user/profile" element={<Profile />} />
                     <Route path="/user/favorites" element={<Favorites />} />
                     <Route path="/user/cart" element={<Cart />} />
-                    <Route path="/user/myListings" element={<MyListings />} />
                     <Route path="/category/:categoryId" element={<Category />} />
                     <Route path="/product/:productId" element={<Product />} />
-                    <Route path="/listings/edit/:listingId" element={<EditListing />} />
-                    <Route path="/listings/new" element={<NewListing />} />
+                
 
                     {/* Static pages */}
                     <Route path="/about" element={<About />} />
@@ -67,8 +62,8 @@ const AppRouter = () => {
                     <Route index element={<Dashboard />} />
                     <Route path="categories" element={<CategoryList />} />
                     <Route path="products" element={<ProductListPage />} />
-                    <Route path="product/:productId" element={<ProductEditPage />} />
-                    
+                    <Route path="products/:productId" element={<ProductEditPage />} />
+                    <Route path="products/create" element={<ProductEditPage />} />
                 </Route>
 
 

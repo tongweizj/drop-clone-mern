@@ -94,7 +94,6 @@ const Header = () => {
                                                 <div class="py-1">
                                                     <Link to="/user/profile" className="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">profile</Link>
                                                     <Link to="/user/favorites" className="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Favorite</Link>
-                                                    <Link to="/user/myListings" className="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">My Listing</Link>
                                                     <Link to="/admin" className="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Admin</Link>
 
                                                     <button onClick={handleLogout}  class="block w-full px-4 py-2 text-left text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Logout</button>

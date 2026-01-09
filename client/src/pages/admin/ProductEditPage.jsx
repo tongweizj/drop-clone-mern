@@ -6,14 +6,13 @@ import { ImageSection } from "@/features/admin/components/ImageSection";
 
 const ProductEditPage = () => {
   const { productId } = useParams();
-  console.log("productId:", productId)
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
-  console.log("isAuthenticated?.user?._id:", isAuthenticated?.user)
   const { product, categories, loading, status, handleChange, onSubmit, setStatus } =
-    useProductEdit(productId, isAuthenticated, navigate);
+    useProductEdit(productId, navigate);
   const inputClass = "w-full px-4 py-3  text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none resize-y"
   const inputHighClass = "min-h-[80px]"
+  console.log("edit page categories:", categories)
   if (!isAuthenticated) {
     return <p>Please log in to view your cart.</p>;
   }
@@ -37,6 +36,30 @@ const ProductEditPage = () => {
               value={product.price}
               onChange={handleChange("price")} />
           </FormField>
+          <FormField label="Category">
+            <select
+              id="category-select"
+              value={product.category}
+              onChange={handleChange("category")}
+              required
+              className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm appearance-none"
+            >
+              <option value="">
+                Select a category
+              </option>
+
+              {categories.map((category) => (
+                <option key={category._id} value={category._id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </FormField>
         </div>
 
         <FormField label="Description">
@@ -59,7 +82,7 @@ const ProductEditPage = () => {
           <input
             className={inputClass}
             value={product.location.city}
-            onChange={handleChange("City")}
+            onChange={handleChange("city")}
             required
           />
         </FormField>
@@ -80,14 +103,42 @@ const ProductEditPage = () => {
           />
         </FormField>
         <FormField label="Condition">
-          <input
-            className={inputClass}
+          
+          <select
             value={product.condition}
             onChange={handleChange("condition")}
             required
-          />
+            className="block w-full px-3 py-2 pr-10 bg-white border border-gray-300 rounded-md shadow-sm 
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 
+                 text-sm text-gray-900 transition-all cursor-pointer"
+          >
+            {/* 默认选项 */}
+            <option value="" disabled className="text-gray-400">
+              Select Condition
+            </option>
 
+            {/* 静态 MenuItem 选项 */}
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+          </select>
+
+          {/* 下拉箭头图标：使用 pointer-events-none 确保点击图标也能触发下拉 */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400 group-hover:text-gray-600">
+            <svg
+              className="h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
         </FormField>
+
         <button
           disabled={loading}
           className={`w-full py-3 rounded-lg font-bold text-white transition ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'}`}

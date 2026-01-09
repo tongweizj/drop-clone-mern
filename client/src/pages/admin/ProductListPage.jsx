@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import PageTitle from "@/components/PageTitle";
 import { ProductList } from "@/features/admin/components/ProductList";
 import { useProductList } from "@/features/products/hooks/useProductList";
-
+import { useAuth } from '@/context/AuthContext.jsx';
 export default function ProductListPage() {
   const { filteredListings, loading } = useProductList("");
+  const { isAuthenticated } = useAuth();
+   console.log("isAuthenticated?.user?._id:", isAuthenticated?.user)
   return (
     <>
       <PageTitle title="Product List" channel="DropClone Admin" />

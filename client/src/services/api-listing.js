@@ -66,7 +66,7 @@ export const create = async (formData) => {
   
     console.log("🧾 Dados enviados no PUT:", dataToSend);
   
-    const res = await fetch(`${API_BASE_URL}/api/listings/${params.listingId}`, options);
+    const res = await fetch(`${API_BASE_URL}/api/listings/${params.productId}`, options);
     if (!res.ok) {
       const text = await res.text();
       throw new Error(`UPDATE failed: HTTP ${res.status} ${res.statusText} – ${text}`);
