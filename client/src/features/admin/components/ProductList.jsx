@@ -6,7 +6,6 @@ import ProductCard from "./ProductCard";
  * @param {Array} items - 商品列表数据
  */
 export const ProductList = ({ items }) => {
-  console.log(items)
   return (      
       <div className="grid grid-cols-1 gap-6">
         {items.map((item) => (
@@ -18,6 +17,7 @@ export const ProductList = ({ items }) => {
           </div>
         ))}
       </div>
+
     
   );
 };

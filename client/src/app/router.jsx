@@ -24,7 +24,8 @@ const FAQ = lazy(() => import('@/pages/static/Faq'));
 const HelpCenter = lazy(() => import('@/pages/static/Help'));
 
 const Dashboard = lazy(() => import('@/pages/admin/Dashboard'));
-const CategoryList = lazy(() => import('@/pages/admin/CategoryList'));
+const CategoryListPage = lazy(() => import('@/pages/admin/CategoryListPage'));
+const CategoryEditPage = lazy(() => import('@/pages/admin/CategoryEditPage'));
 const ProductListPage = lazy(() => import('@/pages/admin/ProductListPage'));
 const ProductEditPage = lazy(() => import('@/pages/admin/ProductEditPage'));
 
@@ -60,7 +61,8 @@ const AppRouter = () => {
                 {/* 后台路由 */}
                 <Route path="/admin" element={<AdminLayout />}>
                     <Route index element={<Dashboard />} />
-                    <Route path="categories" element={<CategoryList />} />
+                    <Route path="categories" element={<CategoryListPage />} />
+                    <Route path="categories/:categoryId" element={<CategoryEditPage />} />
                     <Route path="products" element={<ProductListPage />} />
                     <Route path="products/:productId" element={<ProductEditPage />} />
                     <Route path="products/create" element={<ProductEditPage />} />

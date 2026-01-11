@@ -12,7 +12,7 @@ const ProductEditPage = () => {
     useProductEdit(productId, navigate);
   const inputClass = "w-full px-4 py-3  text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none resize-y"
   const inputHighClass = "min-h-[80px]"
-  console.log("edit page categories:", categories)
+
   if (!isAuthenticated) {
     return <p>Please log in to view your cart.</p>;
   }
